@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Task1
 {
@@ -109,6 +108,20 @@ namespace Task1
             } while (number2 != 0);
 
             return (number1 << i, (DateTime.Now - StartAlgorithmTime).TotalSeconds);
+        }
+
+        /// <summary>
+        ///  Method GetDataForHistogram.
+        ///  Method preparing data for building bar charts.
+        ///  Input data: double, double.
+        ///  Output data: Dictionary<double, string>.
+        /// </summary>
+        public static Dictionary<double, string> GetDataForHistogram(double executionTimeOfFirstAlgorithm, double executionTimeOfSecondAlgorithm)
+        {
+            Dictionary<double, string> algorithmRuntime = new Dictionary<double, string>(2);
+            algorithmRuntime.Add(executionTimeOfFirstAlgorithm, "Euclidean Algorithm");
+            algorithmRuntime.Add(executionTimeOfSecondAlgorithm, "Binary GCD");
+            return algorithmRuntime;
         }
     }
 }
