@@ -14,10 +14,12 @@ namespace Task1
         ///  Method EuclideanAlgorithm.
         ///   Finds the GCD of two integers.
         ///   Input data: int, int.
-        ///   Output data: int.
+        ///   Output data: int result, double algorithmExecutionTime.
         /// </summary>
-        public static int EuclideanAlgorithm(int number1, int number2)
+        public static (int result, double algorithmExecutionTime) EuclideanAlgorithm(int number1, int number2)
         {
+            DateTime StartAlgorithmTime = DateTime.Now;
+
             if (number1 < 0)
                 number1 = Math.Abs(number1);
 
@@ -31,40 +33,40 @@ namespace Task1
                 number1 = temp;
             }
 
-            return number1;
+            return (number1, (DateTime.Now - StartAlgorithmTime).TotalSeconds);
         }
 
         /// <summary>
         ///  Method EuclideanAlgorithm.
         ///   Finds the GCD of three integers.
         ///   Input data: int, int, int.
-        ///   Output data: int.
+        ///   Output data: int result.
         /// </summary>
-        public static int EuclideanAlgorithm(int number1, int number2, int number3) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2), number3);
+        public static int EuclideanAlgorithm(int number1, int number2, int number3) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2).result, number3).result;
 
         /// <summary>
         ///  Method EuclideanAlgorithm.
         ///   Finds the GCD of four integers.
         ///   Input data: int, int, int, int.
-        ///   Output data: int.
+        ///   Output data: int result.
         /// </summary>
-        public static int EuclideanAlgorithm(int number1, int number2, int number3, int number4) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2), EuclideanAlgorithm(number3, number4));
+        public static int EuclideanAlgorithm(int number1, int number2, int number3, int number4) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2).result, EuclideanAlgorithm(number3, number4).result).result;
 
         /// <summary>
         ///  Method EuclideanAlgorithm.
         ///   Finds the GCD of five integers.
         ///   Input data: int, int, int, int, int.
-        ///   Output data: int.
+        ///   Output data: int result.
         /// </summary>
-        public static int EuclideanAlgorithm(int number1, int number2, int number3, int number4, int number5) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2, number3, number4), number5);
+        public static int EuclideanAlgorithm(int number1, int number2, int number3, int number4, int number5) => EuclideanAlgorithm(EuclideanAlgorithm(number1, number2, number3, number4), number5).result;
 
         /// <summary>
         ///  Method BinaryGCD.
         ///   Finds the Binary GCD of two integers and calculates the execution time of the algorithm.
         ///   Input data: int, int.
-        ///   Output data: int result, double AlgorithmExecutionTime.
+        ///   Output data: int result, double algorithmExecutionTime.
         /// </summary>
-        public static (int result, double AlgorithmExecutionTime) BinaryGCD(int number1, int number2)
+        public static (int result, double algorithmExecutionTime) BinaryGCD(int number1, int number2)
         {
             DateTime StartAlgorithmTime = DateTime.Now;
 
