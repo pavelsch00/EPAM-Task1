@@ -461,7 +461,7 @@ namespace Task1_1.Tests
         }
 
         [Fact]
-        public void BinaryGCDTimeCheck_minus99and9_9returned()
+        public void BinaryGCDTimeCheck_minus99and9_0returned()
         {
             // arrange
             int firstNumber = 99;
