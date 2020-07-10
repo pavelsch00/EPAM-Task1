@@ -8,7 +8,7 @@ namespace Task1
     ///  Class EuclideanAlgorithm.
     ///   Implements the Euclidean algorithm.
     /// </summary>
-    public class EuclideanAlgorithm
+    public static class EuclideanAlgorithm
     {
         /// <summary>
         ///  Method CalculationOfCGD.
@@ -27,5 +27,29 @@ namespace Task1
 
             return number1;
         }
+
+        /// <summary>
+        ///  Method CalculationOfCGD.
+        ///   Finds the GCD of three integers.
+        ///   Input data: int, int, int.
+        ///   Output data: int.
+        /// </summary>
+        public static int CalculationOfGCD(int number1, int number2, int number3) => CalculationOfGCD(CalculationOfGCD(number1, number2), number3);
+
+        /// <summary>
+        ///  Method CalculationOfCGD.
+        ///   Finds the GCD of four integers.
+        ///   Input data: int, int, int, int.
+        ///   Output data: int.
+        /// </summary>
+        public static int CalculationOfGCD(int number1, int number2, int number3, int number4) => CalculationOfGCD(CalculationOfGCD(number1, number2), CalculationOfGCD(number3, number4));
+
+        /// <summary>
+        ///  Method CalculationOfCGD.
+        ///   Finds the GCD of five integers.
+        ///   Input data: int, int, int, int, int.
+        ///   Output data: int.
+        /// </summary>
+        public static int CalculationOfGCD(int number1, int number2, int number3, int number4, int number5) => CalculationOfGCD(CalculationOfGCD(number1, number2, number3, number4), number5);
     }
 }
