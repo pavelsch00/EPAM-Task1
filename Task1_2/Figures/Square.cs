@@ -26,7 +26,7 @@ namespace Task1_2.Figures
 
         public double GetPerimeter()
         {
-            return Parties.Sum();
+            return Parties[0] * 4;
         }
 
         public override string ToString()
@@ -38,6 +38,26 @@ namespace Task1_2.Figures
             }
 
             return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
+        }
+
+        public override int GetHashCode()
+        {
+            return Parties.GetHashCode() * Parties.Count;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType()) 
+                return false;
+
+            Square square = (Square)obj;
+
+            if (Parties[0] != square.Parties[0])
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

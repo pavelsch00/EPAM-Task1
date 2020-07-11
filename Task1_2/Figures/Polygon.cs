@@ -57,5 +57,28 @@ namespace Task1_2.Figures
 
             return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
         }
+
+        public override int GetHashCode()
+        {
+            return Parties.GetHashCode() * Parties.Count;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType())
+                return false;
+
+            Polygon polygon = (Polygon)obj;
+
+            for (int i = 0; i < Parties.Count; i++)
+            {
+                if (Parties[i] != polygon.Parties[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

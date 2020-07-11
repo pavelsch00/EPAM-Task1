@@ -19,6 +19,9 @@ namespace Task1_2Test
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("Equals Figure: \n");
+            Console.WriteLine(FindEqualsFigure.FindEqualsFigures(temp[1], temp)[0].ToString());
+            Console.WriteLine(FindEqualsFigure.FindEqualsFigures(temp[5], temp)[1].ToString());
         }
     }
 }

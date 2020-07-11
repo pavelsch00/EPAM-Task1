@@ -118,9 +118,11 @@ namespace Task1_1
         /// </summary>
         public static Dictionary<double, string> GetDataForHistogram(double executionTimeOfFirstAlgorithm, double executionTimeOfSecondAlgorithm)
         {
-            Dictionary<double, string> algorithmRuntime = new Dictionary<double, string>();
-            algorithmRuntime.Add(executionTimeOfFirstAlgorithm, "Euclidean Algorithm");
-            algorithmRuntime.Add(executionTimeOfSecondAlgorithm, "Binary GCD");
+            var algorithmRuntime = new Dictionary<double, string>
+            {
+                { executionTimeOfFirstAlgorithm, "Euclidean Algorithm" },
+                { executionTimeOfSecondAlgorithm, "Binary GCD" }
+            };
             return algorithmRuntime;
         }
     }
