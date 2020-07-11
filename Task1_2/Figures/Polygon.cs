@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Task1_2.Figures.Interfaces;
 
 namespace Task1_2.Figures
 {
-    public class Polygon : Figure, IFigureMethod
+    public class Polygon : IFigure
     {
-        public Polygon(string figureType, List<double> parties, int[,] points)
+        public Polygon(string figureType, List<double> parties, int [,] points)
         {
             FigureType = figureType;
             Parties = parties;
             Points = points;
         }
 
-        public Polygon(Figure figure)
+        public Polygon(string figureType, List<double> parties)
         {
-            FigureType = figure.FigureType;
-            Parties = figure.Parties;
-            Points = figure.Points;
+            FigureType = figureType;
+            Parties = parties;
         }
+
+        public string FigureType { get; set; }
+
+        public List<double> Parties { get; set; }
+
+        public int[,] Points { get; set; }
 
         public double GetArea()
         {
@@ -29,7 +35,7 @@ namespace Task1_2.Figures
 
             for (int i = 0; i < Points.GetLength(1) - 1; i++)
             {
-                sum1 += Points[0, i] * Points[1, i + 1];
+                sum1 += Points[0, i] * Points[1, i];
                 sum2 += Points[1, i] * Points[0, i + 1];
             }
 
@@ -41,7 +47,6 @@ namespace Task1_2.Figures
             return Parties.Sum();
         }
 
-
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -50,7 +55,7 @@ namespace Task1_2.Figures
                 stringBuilder.Append(item).Append(" ");
             }
 
-            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}";
+            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
         }
     }
 }

@@ -6,14 +6,13 @@ using Task1_2.Figures.Interfaces;
 
 namespace Task1_2.Figures
 {
-    public class Square : IFigure
+    public class Circle : IFigure
     {
-        public Square(string figureType, List<double> parties)
+        public Circle(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
         }
-
 
         public string FigureType { get; set; }
 
@@ -21,12 +20,12 @@ namespace Task1_2.Figures
 
         public double GetArea()
         {
-            return Parties[0] * Parties[0];
+            return Math.PI * Math.Pow(Parties[0], 2);
         }
 
         public double GetPerimeter()
         {
-            return Parties.Sum();
+            return 2 * Math.PI * Parties[0];
         }
 
         public override string ToString()

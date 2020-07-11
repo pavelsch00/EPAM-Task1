@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Task1_2.Figures.Interfaces
 {
-    interface IFigureProperties
+    public interface IFigure
     {
         /// <summary>
         /// Figure Type.
@@ -16,8 +14,17 @@ namespace Task1_2.Figures.Interfaces
         /// Parties.
         /// List with the value of the sides of the geometric figure.
         /// </summary>
+        /// 
         public List<double> Parties { get; set; }
 
-        public int[,] Points { get; set; }
+        /// <summary>
+        /// Perimeter Calculation Method.
+        /// </summary>
+        public double GetPerimeter();
+
+        /// <summary>
+        /// Area Calculation Method.
+        /// </summary>
+        public double GetArea();
     }
 }

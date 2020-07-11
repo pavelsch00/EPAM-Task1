@@ -13,7 +13,7 @@ namespace Task1_2Test
 
             //Square square = new Square();
 
-            var temp = ParseFigure.GetFigure(path);
+            var temp = ParseFigure.GetFirus(path);
 
             foreach (var item in temp)
             {

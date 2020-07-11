@@ -6,9 +6,9 @@ using Task1_2.Figures.Interfaces;
 
 namespace Task1_2.Figures
 {
-    public class Square : IFigure
+    public class Triangle : IFigure
     {
-        public Square(string figureType, List<double> parties)
+        public Triangle(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
@@ -21,7 +21,9 @@ namespace Task1_2.Figures
 
         public double GetArea()
         {
-            return Parties[0] * Parties[0];
+            var p = GetPerimeter() / 2;
+
+            return Math.Sqrt(p * (p - Parties[0]) * (p - Parties[1]) * (p - Parties[2]));
         }
 
         public double GetPerimeter()

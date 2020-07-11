@@ -2,25 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Task1_2.Figures;
 using Task1_2.Figures.Interfaces;
 
-namespace Task1_2
+namespace Task1_2.Figures
 {
-    public class Figure : IFigureProperties
+    public class Rectangle : IFigure
     {
-        public Figure()
-        {
-        }
-
-        public Figure(string figureType, List<double> parties, int[,] points)
-        {
-            FigureType = figureType;
-            Parties = parties;
-            Points = points;
-        }
-
-        public Figure(string figureType, List<double> parties)
+        public Rectangle(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
@@ -30,7 +18,15 @@ namespace Task1_2
 
         public List<double> Parties { get; set; }
 
-        public int[,] Points { get; set; }
+        public double GetArea()
+        {
+            return Parties[0] * Parties[1];
+        }
+
+        public double GetPerimeter()
+        {
+            return Parties.Sum();
+        }
 
         public override string ToString()
         {
@@ -40,7 +36,7 @@ namespace Task1_2
                 stringBuilder.Append(item).Append(" ");
             }
 
-            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n";
+            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
         }
     }
 }
