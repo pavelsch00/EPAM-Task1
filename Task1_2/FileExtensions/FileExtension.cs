@@ -11,6 +11,7 @@ namespace Task1_2.FileExtensions
         {
             string figure;
             string[] firures = new string[File.ReadAllLines(path).Length];
+
             try
             {
                 using StreamReader sr = new StreamReader(path);
@@ -19,6 +20,7 @@ namespace Task1_2.FileExtensions
                     firures[i] = figure;
                 }
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

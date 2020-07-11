@@ -1,16 +1,11 @@
-﻿/// <summary>
+﻿using System.Collections.Generic;
+/// <summary>
 /// Interface describes Figure
 /// </summary>
 namespace Task1_2
 {
-    public interface IFigure
+    public interface IFigureMethod
     {
-        /// <summary>
-        /// Figure Type.
-        /// Methods for finding the area and perimeter depend on the type of figure.
-        /// </summary>
-        public string FigureType { get; set; }
-
         /// <summary>
         /// Perimeter Calculation Method.
         /// </summary>
