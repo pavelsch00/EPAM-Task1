@@ -21,7 +21,7 @@ namespace Task1_2
         public Figure(string figureType, List<Point> points)
         {
             FigureType = figureType;
-            for (int i = 0; i < points.Count - 1; i =+ 2)
+            for (int i = 0; i < points.Count; i =+ 2)
             {
                 Parties.Add(GetSide(points[i].X, points[i].Y, points[i + 1].X, points[i + 1].Y));
             }  

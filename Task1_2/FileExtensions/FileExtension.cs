@@ -7,7 +7,7 @@ namespace Task1_2.FileExtensions
 {
     public class FileExtension
     {
-        public static void GetFromFile(string path)
+        public static string[] GetFromFile(string path)
         {
             string figure;
             string[] firures = new string[File.ReadAllLines(path).Length];
@@ -25,6 +25,8 @@ namespace Task1_2.FileExtensions
             {
                 Console.WriteLine(ex.Message);
             }
+
+            return firures;
         }
     }
 }
