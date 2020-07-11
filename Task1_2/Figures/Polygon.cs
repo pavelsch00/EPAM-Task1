@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+
+namespace Task1_2.Figures
+{
+    public class Polygon : Figure, IFigureMethod
+    {
+        public Polygon(string figureType, List<double> parties, int[,] points)
+        {
+            FigureType = figureType;
+            Parties = parties;
+            Points = points;
+        }
+
+        public Polygon(Figure figure)
+        {
+            FigureType = figure.FigureType;
+            Parties = figure.Parties;
+            Points = figure.Points;
+        }
+
+        public double GetArea()
+        {
+            int sum1 = 0;
+            int sum2 = 0;
+
+            for (int i = 0; i < Points.GetLength(1) - 1; i++)
+            {
+                sum1 += Points[0, i] * Points[1, i + 1];
+                sum2 += Points[1, i] * Points[0, i + 1];
+            }
+
+            return Math.Abs((sum1 - sum2) / 2d);
+        }
+
+        public double GetPerimeter()
+        {
+            return Parties.Sum();
+        }
+
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (var item in Parties)
+            {
+                stringBuilder.Append(item).Append(" ");
+            }
+
+            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}";
+        }
+    }
+}

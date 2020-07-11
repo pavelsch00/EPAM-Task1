@@ -17,5 +17,7 @@ namespace Task1_2.Figures.Interfaces
         /// List with the value of the sides of the geometric figure.
         /// </summary>
         public List<double> Parties { get; set; }
+
+        public int[,] Points { get; set; }
     }
 }

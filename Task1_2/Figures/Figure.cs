@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Task1_2.Figures;
 using Task1_2.Figures.Interfaces;
@@ -10,7 +11,13 @@ namespace Task1_2
     {
         public Figure()
         {
+        }
 
+        public Figure(string figureType, List<double> parties, int[,] points)
+        {
+            FigureType = figureType;
+            Parties = parties;
+            Points = points;
         }
 
         public Figure(string figureType, List<double> parties)
@@ -23,6 +30,8 @@ namespace Task1_2
 
         public List<double> Parties { get; set; }
 
+        public int[,] Points { get; set; }
+
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -31,7 +40,7 @@ namespace Task1_2
                 stringBuilder.Append(item).Append(" ");
             }
 
-            return $"FigureType: Figure Type: {FigureType}\n Parties: {stringBuilder}";
+            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n";
         }
     }
 }
