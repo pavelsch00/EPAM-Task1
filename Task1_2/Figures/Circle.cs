@@ -36,7 +36,7 @@ namespace Task1_2.Figures
                 stringBuilder.Append(item).Append(" ");
             }
 
-            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
+            return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n Hash: {GetHashCode()}";
         }
 
         public override int GetHashCode()

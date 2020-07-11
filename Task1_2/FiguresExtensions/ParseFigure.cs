@@ -15,11 +15,11 @@ namespace Task1_2.FiguresExtensions
         {
             string figuresType;
             string[] figuresArr = FileExtensions.FileExtension.GetFromFile(path);
-            IFigure[] figures = new IFigure[figuresArr.Length];
-            string pattern = @"([A-z]+) ([A-z]+)";
-            string patternPoints = @"(\d+|-\d+)";
+            var figures = new IFigure[figuresArr.Length];
+            var pattern = @"([A-z]+) ([A-z]+)";
+            var patternPoints = @"(\d+|-\d+)";
 
-            Regex regex = new Regex(pattern);
+            var regex = new Regex(pattern);
 
             for (int i = 0; i < figuresArr.Length; i++)
             {
@@ -29,10 +29,10 @@ namespace Task1_2.FiguresExtensions
                 {
                     figuresType = match.Groups[1].Value;
 
-                    Regex regexPoints = new Regex(patternPoints);
-
+                    var regexPoints = new Regex(patternPoints);
                     var matchSides = Regex.Matches(figuresArr[i], patternPoints);
-                    int[,] points = new int[2, matchSides.Count / 2];
+                    var points = new int[2, matchSides.Count / 2];
+
                     for (int k = 0, j = 0; k < matchSides.Count; k += match.Groups[2].Value == "points" ? 2 : 1, j++)
                     {
                         if (match.Groups[2].Value == "points")
