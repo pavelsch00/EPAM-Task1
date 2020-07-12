@@ -23,12 +23,12 @@ namespace Task1_2.Figures
         {
             var p = GetPerimeter() / 2;
 
-            return Math.Sqrt(p * (p - Parties[0]) * (p - Parties[1]) * (p - Parties[2]));
+            return Math.Round(Math.Sqrt(p * (p - Parties[0]) * (p - Parties[1]) * (p - Parties[2])), 2);
         }
 
         public double GetPerimeter()
         {
-            return Parties.Sum();
+            return Math.Round(Parties.Sum(), 2);
         }
 
         public override string ToString()

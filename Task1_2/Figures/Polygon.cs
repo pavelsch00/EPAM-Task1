@@ -39,12 +39,12 @@ namespace Task1_2.Figures
                 sum2 += Points[1, i] * Points[0, i + 1];
             }
 
-            return Math.Abs((sum1 - sum2) / 2d);
+            return Math.Round(Math.Abs((sum1 - sum2) / 2d), 2);
         }
 
         public double GetPerimeter()
         {
-            return Parties.Sum();
+            return Math.Round(Parties.Sum(), 2);
         }
 
         public override string ToString()

@@ -1,19 +1,19 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Task1_2.Figures;
 using Xunit;
 
 namespace Task1_2.Tests
 {
-    public class Task1_1Tests
+    public class PolygonTest
     {
         [Fact]
         public void GetArea_5and5_78pPoint53981633974483Returned()
         {
             // arrange
             string figureType = "Circle";
-            List<double> parties = new List<double>() { 5, 5};
+            List<double> parties = new List<double>() { 5, 5 };
             Circle circle = new Circle(figureType, parties);
-            double expected = 78.54;
+            double expected = 78.53981633974483;
 
             // act
             double actual = circle.GetArea();
@@ -29,7 +29,7 @@ namespace Task1_2.Tests
             string figureType = "Circle";
             List<double> parties = new List<double>() { 5, 5 };
             Circle circle = new Circle(figureType, parties);
-            double expected = 31.42;
+            double expected = 31.41592653589793;
 
             // act
             double actual = circle.GetPerimeter();

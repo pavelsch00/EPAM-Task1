@@ -20,12 +20,12 @@ namespace Task1_2.Figures
 
         public double GetArea()
         {
-            return Math.PI * Math.Pow(Parties[0], 2);
+            return Math.Round(Math.PI * Math.Pow(Parties[0], 2), 2);
         }
 
         public double GetPerimeter()
         {
-            return 2 * Math.PI * Parties[0];
+            return Math.Round(2 * Math.PI * Parties[0], 2);
         }
 
         public override string ToString()
@@ -52,6 +52,7 @@ namespace Task1_2.Figures
             Circle circle = (Circle)obj;
 
             return GetArea() == circle.GetArea();
+    
         }
     }
 }

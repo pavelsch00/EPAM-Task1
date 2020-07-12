@@ -20,12 +20,12 @@ namespace Task1_2.Figures
 
         public double GetArea()
         {
-            return Parties[0] * Parties[1];
+            return Math.Round(Parties[0] * Parties[1], 2);
         }
 
         public double GetPerimeter()
         {
-            return Parties.Sum();
+            return Math.Round(Parties.Sum(), 2);
         }
 
         public override string ToString()

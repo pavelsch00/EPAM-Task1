@@ -81,6 +81,6 @@ namespace Task1_2.FiguresExtensions
         }
 
 
-        private  static double FindingSideByPoints(int X1, int Y1, int X2, int Y2) => Math.Sqrt(Math.Pow(X1 - X2, 2) + Math.Pow(Y1 - Y2, 2));
+        private  static double FindingSideByPoints(int X1, int Y1, int X2, int Y2) => Math.Round(Math.Sqrt(Math.Pow(X1 - X2, 2) + Math.Pow(Y1 - Y2, 2)), 1);
     }
 }
