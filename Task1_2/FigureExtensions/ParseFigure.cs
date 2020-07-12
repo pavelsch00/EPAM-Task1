@@ -6,8 +6,18 @@ using Task1_2.Figures.Interfaces;
 
 namespace Task1_2.FiguresExtensions
 {
+    /// <summary>
+    ///  Class ParseFigure.
+    ///  The class converts an array of strings to an array of shape figures
+    /// </summary>
     public class ParseFigure
     {
+        /// <summary>
+        ///  Method GetFigures.
+        ///  The method converts an array of strings to an array of shape figures
+        ///  Input parameters: string (the path to the file).
+        ///  Returned value: IFigure[].
+        /// </summary>
         public static IFigure[] GetFigures(string path)
         {
             string figuresType;
@@ -74,7 +84,12 @@ namespace Task1_2.FiguresExtensions
             return figures;
         }
 
-
-        private  static double FindingSideByPoints(int X1, int Y1, int X2, int Y2) => Math.Round(Math.Sqrt(Math.Pow(X1 - X2, 2) + Math.Pow(Y1 - Y2, 2)), 1);
+        /// <summary>
+        ///  Method FindingSideByPoints.
+        ///  The method converts the coordinates of the sides to the length of this side
+        ///  Input parameters: int X1, int Y1, int X2, int Y2.
+        ///  Returned value: double.
+        /// </summary>
+        private static double FindingSideByPoints(int X1, int Y1, int X2, int Y2) => Math.Round(Math.Sqrt(Math.Pow(X1 - X2, 2) + Math.Pow(Y1 - Y2, 2)), 1);
     }
 }

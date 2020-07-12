@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Task1_2.FileExtensions
 {
+    /// <summary>
+    ///  Class FileExtension.
+    ///  The class reads lines from a file into an array of strings.
+    /// </summary>
     public class FileExtension
     {
+        /// <summary>
+        ///  Class FileExtension.
+        ///  The class reads lines from a file into an array of strings.
+        ///  Input parameters: string (path in file).
+        ///  Returned value: string[.
+        /// </summary>
         public static string[] GetFromFile(string path)
         {
             string figure;
