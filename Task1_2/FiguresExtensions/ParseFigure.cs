@@ -15,7 +15,6 @@ namespace Task1_2.FiguresExtensions
             var figures = new IFigure[figuresArr.Length];
             var pattern = @"([A-z]+) ([A-z]+)";
             var patternPoints = @"(\d+|-\d+)";
-
             var regex = new Regex(pattern);
 
             for (int i = 0; i < figuresArr.Length; i++)
@@ -25,8 +24,6 @@ namespace Task1_2.FiguresExtensions
                 foreach (Match match in regex.Matches(figuresArr[i]))
                 {
                     figuresType = match.Groups[1].Value;
-
-                    var regexPoints = new Regex(patternPoints);
                     var matchSides = Regex.Matches(figuresArr[i], patternPoints);
                     var points = new int[2, matchSides.Count / 2];
 
