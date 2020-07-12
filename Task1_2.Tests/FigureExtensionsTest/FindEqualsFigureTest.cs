@@ -11,14 +11,12 @@ namespace Task1_2.Tests
         public void FindEqualsFiguresTest()
         {
             // arrange
-            var temp = ParseFigure.GetFirus(@"..\..\..\Figures.txt");
             var figureType = "Square";
             var parties = new List<double>() { 7 };
-            var square = new Square(figureType, parties);
-            var expected = square;
+            var expected = new Square(figureType, parties);
 
             // act
-            var actual = FindEqualsFigure.FindEqualsFigures(square, temp)[0];
+            var actual = FindEqualsFigure.FindEqualsFigures(expected, ParseFigure.GetFigures(@"..\..\..\Resurses\Figures.txt"))[0];
 
             // assert;
             Assert.Equal(expected, actual);

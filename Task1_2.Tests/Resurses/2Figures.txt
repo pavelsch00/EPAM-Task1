@@ -1,0 +1,2 @@
+Triangle sides 6, 8, 10
+Square sides 7

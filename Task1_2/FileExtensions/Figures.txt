@@ -1,4 +1,0 @@
-Parallelogram parties 12, 8
-Parallelogram points 4, 6, -5, 11, 12, 15, -7, 16
-Parallelogram parties 7, 5
-Polygon parties 8, 4, 6, 8, 10, 5, 3

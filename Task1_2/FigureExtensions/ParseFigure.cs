@@ -8,7 +8,7 @@ namespace Task1_2.FiguresExtensions
 {
     public class ParseFigure
     {
-        public static IFigure[] GetFirus(string path)
+        public static IFigure[] GetFigures(string path)
         {
             string figuresType;
             string[] figuresArr = FileExtensions.FileExtension.GetFromFile(path);
