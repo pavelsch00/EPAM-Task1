@@ -19,11 +19,15 @@ namespace Task1_2.Figures.Interfaces
 
         /// <summary>
         /// Perimeter Calculation Method.
+        /// Input parameters: null.
+        /// Returned value: double.
         /// </summary>
         public double GetPerimeter();
 
         /// <summary>
         /// Area Calculation Method.
+        /// Input parameters: null.
+        /// Returned value: double.
         /// </summary>
         public double GetArea();
     }

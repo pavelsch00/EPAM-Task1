@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Task1_2.Figures.Interfaces;
 
@@ -8,25 +7,24 @@ namespace Task1_2.Figures
 {
     public class Circle : IFigure
     {
+        #region Constructor
         public Circle(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
         }
+        #endregion
 
+        #region Properties
         public string FigureType { get; set; }
 
         public List<double> Parties { get; set; }
+        #endregion
 
-        public double GetArea()
-        {
-            return Math.Round(Math.PI * Math.Pow(Parties[0], 2), 2);
-        }
+        #region Methods
+        public double GetArea() => Math.Round(Math.PI * Math.Pow(Parties[0], 2), 2);
 
-        public double GetPerimeter()
-        {
-            return Math.Round(2 * Math.PI * Parties[0], 2);
-        }
+        public double GetPerimeter() => Math.Round(2 * Math.PI * Parties[0], 2);
 
         public override string ToString()
         {
@@ -39,10 +37,7 @@ namespace Task1_2.Figures
             return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n Hash: {GetHashCode()}";
         }
 
-        public override int GetHashCode()
-        {
-            return Parties.GetHashCode() * Parties.Count;
-        }
+        public override int GetHashCode() => Parties.GetHashCode() * Parties.Count;
 
         public override bool Equals(object obj)
         {
@@ -54,5 +49,6 @@ namespace Task1_2.Figures
             return GetArea() == circle.GetArea();
     
         }
+        #endregion
     }
 }

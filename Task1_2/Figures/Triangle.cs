@@ -8,16 +8,22 @@ namespace Task1_2.Figures
 {
     public class Triangle : IFigure
     {
+        #region Constructor
         public Triangle(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
         }
+        #endregion
 
-
+        #region Properties
         public string FigureType { get; set; }
 
         public List<double> Parties { get; set; }
+        #endregion
+
+        #region Methods
+        public override int GetHashCode() => Parties.GetHashCode() * Parties.Count;
 
         public double GetArea()
         {
@@ -26,10 +32,7 @@ namespace Task1_2.Figures
             return Math.Round(Math.Sqrt(p * (p - Parties[0]) * (p - Parties[1]) * (p - Parties[2])), 2);
         }
 
-        public double GetPerimeter()
-        {
-            return Math.Round(Parties.Sum(), 2);
-        }
+        public double GetPerimeter() => Math.Round(Parties.Sum(), 2);
 
         public override string ToString()
         {
@@ -40,11 +43,6 @@ namespace Task1_2.Figures
             }
 
             return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
-        }
-
-        public override int GetHashCode()
-        {
-            return Parties.GetHashCode() * Parties.Count;
         }
 
         public override bool Equals(object obj)
@@ -64,5 +62,6 @@ namespace Task1_2.Figures
 
             return true;
         }
+        #endregion
     }
 }

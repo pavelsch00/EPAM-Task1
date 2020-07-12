@@ -8,26 +8,26 @@ namespace Task1_2.Figures
 {
     public class Square : IFigure
     {
+        #region Constructor
         public Square(string figureType, List<double> parties)
         {
             FigureType = figureType;
             Parties = parties;
         }
+        #endregion
 
-
+        #region Properties
         public string FigureType { get; set; }
 
         public List<double> Parties { get; set; }
+        #endregion
 
-        public double GetArea()
-        {
-            return Math.Round(Parties[0] * Parties[0], 2);
-        }
+        #region Methods
+        public double GetArea() => Math.Round(Parties[0] * Parties[0], 2);
 
-        public double GetPerimeter()
-        {
-            return Math.Round(Parties[0] * 4, 2);
-        }
+        public double GetPerimeter() => Math.Round(Parties[0] * 4, 2);
+
+        public override int GetHashCode() => Parties.GetHashCode() * Parties.Count;
 
         public override string ToString()
         {
@@ -38,11 +38,6 @@ namespace Task1_2.Figures
             }
 
             return $"Figure Type: {FigureType}\n Parties: {stringBuilder}\n Area: {GetArea()}\n Perimetr: {GetPerimeter()}\n";
-        }
-
-        public override int GetHashCode()
-        {
-            return Parties.GetHashCode() * Parties.Count;
         }
 
         public override bool Equals(object obj)
@@ -59,5 +54,6 @@ namespace Task1_2.Figures
 
             return true;
         }
+        #endregion
     }
 }
