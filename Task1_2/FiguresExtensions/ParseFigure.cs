@@ -33,14 +33,14 @@ namespace Task1_2.FiguresExtensions
                     var matchSides = Regex.Matches(figuresArr[i], patternPoints);
                     var points = new int[2, matchSides.Count / 2];
 
-                    for (int k = 0, j = 0; k < matchSides.Count; k += match.Groups[2].Value == "points" ? 2 : 1, j++)
+                    for (int k = 0, j = 0, d =0; k < matchSides.Count; k += match.Groups[2].Value == "points" ? 2 : 1, j++, d += 2)
                     {
                         if (match.Groups[2].Value == "points")
                         {
                             if(match.Groups[1].Value == "Polygon")
                             {
-                                points[0, j] = int.Parse(matchSides[j].Groups[0].Value);
-                                points[1, j] = int.Parse(matchSides[j + 1].Groups[0].Value);
+                                points[0, j] = int.Parse(matchSides[d].Groups[0].Value);
+                                points[1, j] = int.Parse(matchSides[d + 1].Groups[0].Value);
                             }
 
                             if (k + 2 == matchSides.Count)

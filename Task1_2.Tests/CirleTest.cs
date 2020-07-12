@@ -7,7 +7,7 @@ namespace Task1_2.Tests
     public class Task1_1Tests
     {
         [Fact]
-        public void GetArea_5and5_78pPoint53981633974483Returned()
+        public void GetArea_5and5_78pPoint54Returned()
         {
             // arrange
             string figureType = "Circle";
@@ -23,7 +23,7 @@ namespace Task1_2.Tests
         }
 
         [Fact]
-        public void GetPerimeter_5and5_31Point41592653589793Returned()
+        public void GetPerimeter_5and5_31Point42Returned()
         {
             // arrange
             string figureType = "Circle";
