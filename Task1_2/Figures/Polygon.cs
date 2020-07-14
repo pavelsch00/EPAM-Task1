@@ -40,7 +40,7 @@ namespace Task1_2.Figures
 
         /// <summary>
         ///  Method GetHashCode.
-        ///  Ьethod gets the hash code of the object.
+        ///  Method gets the hash code of the object.
         ///  Input parameters: null.
         ///  Returned value: int.
         /// </summary>
